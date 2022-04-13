@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -35,4 +38,51 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.flex-nav {
+  display: flex;
+}
+
+.flex-nav a {
+  padding: 20px;
+}
+
+.flex-list {
+  display: flex;
+}
+
+.flex-list div {
+  padding: 20px;
+}
+
+.flex-list div span {
+  font-weight: bold;
+}
+
+.titulo {
+  padding: 20px;
+}
+
+.texto {
+  padding: 20px;
+  max-width: 700px;
+}
+
+.texto span {
+  font-weight: bold;
+}
+
+.status {
+  font-weight: bold;
+  padding: 20px;
+  display: inline;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }

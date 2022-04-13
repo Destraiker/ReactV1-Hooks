@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
+import UseIdComponente from "./hooks/useId";
+import UseDeferredValue from "./hooks/useDeferredValue";
+import UseInsertionEffect from "./hooks/useInsertionEffect";
+import UseSyncExternalStore from "./hooks/useSyncExternalStore";
+import UseTransicao from "./hooks/useTransicao";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div>
+          <nav className="flex-nav">
+            <Link to="/useid">UseId</Link>
+            <Link to="/useinsertioneffect">UseInsertionEffect</Link>
+            <Link to="/usedeferredvalue">UseDeferredValue</Link>
+            <Link to="/usesyncexternalstore">UseSyncExternalStore</Link>
+            <Link to="/usetransicao">UseTransicao</Link>
+          </nav>
+
+          <Routes>
+            <Route path="/useid" element={<UseIdComponente />} />
+            <Route
+              path="/useinsertioneffect"
+              element={<UseInsertionEffect />}
+            />
+            <Route path="/usedeferredvalue" element={<UseDeferredValue />} />
+            <Route
+              path="/usesyncexternalstore"
+              element={<UseSyncExternalStore />}
+            />
+            <Route path="/usetransicao" element={<UseTransicao />} />
+            <Route path="*" element={<UseIdComponente />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
